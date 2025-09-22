@@ -1,0 +1,187 @@
+<!-- User Profile Section -->
+<section id="profileSection" class="content-section">
+    <div class="section-header">
+        <h2>My Profile</h2>
+        <p>Manage your personal information and preferences</p>
+    </div>
+    
+    <div class="profile-container">
+        <!-- Profile Card -->
+        <div class="profile-card card">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <span class="material-icons">account_circle</span>
+                </div>
+                <div class="profile-info">
+                    <h3 id="profileName">John Doe</h3>
+                    <p id="profileEmail">john.doe@example.com</p>
+                    <span class="profile-badge">Premium Member</span>
+                </div>
+            </div>
+            
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <span class="stat-value">42</span>
+                    <span class="stat-label">Days Active</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">156</span>
+                    <span class="stat-label">Sessions</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">1,240</span>
+                    <span class="stat-label">Minutes</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">28</span>
+                    <span class="stat-label">Day Streak</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Personal Information -->
+        <div class="profile-section card">
+            <h3>Personal Information</h3>
+            <form id="profileForm">
+                <div class="form-group">
+                    <label>Display Name</label>
+                    <input type="text" id="profileDisplayName" value="John Doe" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="profileEmailInput" value="john.doe@example.com" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="profilePhone" value="+91 98765 43210" placeholder="+91 XXXXX XXXXX">
+                </div>
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="date" id="profileDOB" value="1995-06-15">
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <select id="profileGender">
+                        <option value="">Prefer not to say</option>
+                        <option value="male" selected>Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span class="material-icons">save</span> Save Changes
+                </button>
+            </form>
+        </div>
+        
+        <!-- Preferences -->
+        <div class="profile-section card">
+            <h3>Preferences</h3>
+            <div class="preference-item">
+                <label for="prefLanguage">Preferred Language</label>
+                <select id="prefLanguage">
+                    <option value="en" selected>English</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="mr">मराठी</option>
+                </select>
+            </div>
+            <div class="preference-item">
+                <label for="prefTheme">Theme</label>
+                <select id="prefTheme">
+                    <option value="dark" selected>Dark Mode</option>
+                    <option value="light">Light Mode</option>
+                    <option value="auto">Auto (System)</option>
+                </select>
+            </div>
+            <div class="preference-item">
+                <label>
+                    <input type="checkbox" id="prefNotifications" checked>
+                    Enable Push Notifications
+                </label>
+            </div>
+            <div class="preference-item">
+                <label>
+                    <input type="checkbox" id="prefReminders" checked>
+                    Daily Wellness Reminders
+                </label>
+            </div>
+            <div class="preference-item">
+                <label>
+                    <input type="checkbox" id="prefAnonymous">
+                    Anonymous Mode in Community
+                </label>
+            </div>
+        </div>
+        
+        <!-- Wellness Goals -->
+        <div class="profile-section card">
+            <h3>My Wellness Goals</h3>
+            <div class="goals-list">
+                <div class="goal-item">
+                    <input type="checkbox" checked>
+                    <label>Meditate for 10 minutes daily</label>
+                </div>
+                <div class="goal-item">
+                    <input type="checkbox" checked>
+                    <label>Practice gratitude journaling</label>
+                </div>
+                <div class="goal-item">
+                    <input type="checkbox">
+                    <label>Connect with community weekly</label>
+                </div>
+                <div class="goal-item">
+                    <input type="checkbox">
+                    <label>Complete breathing exercises daily</label>
+                </div>
+            </div>
+            <button class="btn btn-secondary" onclick="addNewGoal()">
+                <span class="material-icons">add</span> Add New Goal
+            </button>
+        </div>
+        
+        <!-- Privacy & Security -->
+        <div class="profile-section card">
+            <h3>Privacy & Security</h3>
+            <div class="security-options">
+                <button class="btn btn-secondary" onclick="changePassword()">
+                    <span class="material-icons">lock</span> Change Password
+                </button>
+                <button class="btn btn-secondary" onclick="enableTwoFactor()">
+                    <span class="material-icons">security</span> Two-Factor Authentication
+                </button>
+                <button class="btn btn-secondary" onclick="downloadData()">
+                    <span class="material-icons">download</span> Download My Data
+                </button>
+                <button class="btn btn-danger" onclick="deleteAccount()">
+                    <span class="material-icons">delete_forever</span> Delete Account
+                </button>
+            </div>
+        </div>
+        
+        <!-- Subscription Status -->
+        <div class="profile-section card">
+            <h3>Subscription</h3>
+            <div class="subscription-info">
+                <div class="subscription-status">
+                    <span class="badge badge-premium">Premium Active</span>
+                    <p>Your premium subscription is active until <strong>Dec 31, 2024</strong></p>
+                </div>
+                <div class="subscription-benefits">
+                    <h4>Premium Benefits:</h4>
+                    <ul>
+                        <li>✓ Unlimited AI companion conversations</li>
+                        <li>✓ Advanced meditation programs</li>
+                        <li>✓ Priority crisis support</li>
+                        <li>✓ Personalized wellness insights</li>
+                        <li>✓ Ad-free experience</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary">
+                    <span class="material-icons">upgrade</span> Manage Subscription
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

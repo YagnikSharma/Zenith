@@ -1,0 +1,364 @@
+/* Meditation Styles */
+
+.meditation-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.meditation-timer {
+    text-align: center;
+}
+
+.timer-display {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--primary-orange);
+    font-family: 'Courier New', monospace;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.progress-ring__svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.progress-ring__circle-bg {
+    fill: none;
+    stroke: var(--charcoal-light);
+    stroke-width: 6;
+    opacity: 0.3;
+}
+
+.progress-ring__circle {
+    fill: none;
+    stroke: var(--primary-orange);
+    stroke-width: 6;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.35s ease;
+}
+
+#timerDisplay {
+    position: relative;
+    z-index: 1;
+}
+
+.timer-display.pulse #timerDisplay {
+    animation: pulse 1s ease-in-out infinite;
+    color: #ff3333;
+}
+
+@keyframes pulse {
+    0% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% { 
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.timer-controls {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+}
+
+.timer-controls select {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--charcoal-dark);
+    border: 1px solid var(--charcoal-light);
+    color: var(--text-primary);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.timer-controls select:hover {
+    border-color: var(--primary-orange);
+}
+
+/* Breathing Exercises */
+.breathing-exercises {
+    text-align: center;
+}
+
+.exercise-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.exercise-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--charcoal-dark);
+    border: 2px solid var(--charcoal-light);
+    color: var(--text-primary);
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.exercise-btn:hover {
+    background: var(--primary-orange);
+    border-color: var(--primary-orange);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Breathing Animation */
+.breathing-animation {
+    margin: var(--spacing-xl) auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.breath-circle {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, var(--primary-orange), var(--primary-orange-dark));
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 4s ease-in-out;
+    box-shadow: 0 0 40px rgba(255, 102, 0, 0.5);
+}
+
+.breath-circle.inhale {
+    transform: translate(-50%, -50%) scale(1.5);
+    box-shadow: 0 0 60px rgba(255, 102, 0, 0.8);
+}
+
+.breath-circle.hold {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.breath-circle.exhale {
+    transform: translate(-50%, -50%) scale(0.8);
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+}
+
+.breath-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Meditation Stats */
+.meditation-stats {
+    background: linear-gradient(135deg, var(--charcoal-medium), var(--charcoal-dark));
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.stat {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--charcoal-dark);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--charcoal-light);
+    transition: all var(--transition-fast);
+}
+
+.stat:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-orange);
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Mood Tracking */
+.mood-tracking {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.mood-tracking label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.mood-tracking input[type="range"] {
+    width: 100%;
+    height: 8px;
+    background: var(--charcoal-light);
+    border-radius: var(--radius-round);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.mood-tracking input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-orange);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-fast);
+}
+
+.mood-tracking input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: var(--shadow-lg);
+}
+
+.mood-tracking textarea {
+    background: var(--charcoal-dark);
+    border: 1px solid var(--charcoal-light);
+    color: var(--text-primary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    resize: vertical;
+    min-height: 80px;
+}
+
+.mood-tracking textarea:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.2);
+}
+
+/* Guided Meditation */
+.guided-meditation {
+    background: var(--charcoal-dark);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.meditation-script {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
+    background: var(--charcoal-medium);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary-orange);
+}
+
+.meditation-controls {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+}
+
+/* Session History */
+.session-history {
+    margin-top: var(--spacing-xl);
+}
+
+.session-item {
+    padding: var(--spacing-md);
+    background: var(--charcoal-dark);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all var(--transition-fast);
+}
+
+.session-item:hover {
+    background: var(--charcoal-medium);
+    transform: translateX(4px);
+}
+
+.session-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.session-date {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.session-duration {
+    font-weight: 600;
+    color: var(--primary-orange);
+}
+
+.mood-change {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--charcoal-medium);
+    border-radius: var(--radius-round);
+}
+
+.mood-change.positive {
+    background: rgba(76, 175, 80, 0.2);
+    color: var(--success);
+}
+
+.mood-change.negative {
+    background: rgba(244, 67, 54, 0.2);
+    color: var(--danger);
+}
+
+.mood-change.neutral {
+    background: rgba(158, 158, 158, 0.2);
+    color: var(--text-muted);
+}

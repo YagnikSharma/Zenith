@@ -1,0 +1,36 @@
+# Core Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# Environment & Configuration
+python-dotenv==1.0.0
+
+# Firebase
+firebase-admin==6.4.0
+
+# Google Cloud Services
+google-cloud-aiplatform==1.38.1
+google-generativeai==0.3.2
+google-cloud-translate==3.13.0
+google-cloud-language==2.11.1
+
+# Authentication & Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Database (for local storage if needed)
+sqlalchemy==2.0.23
+aiosqlite==0.19.0
+
+# HTTP Client
+httpx==0.25.2
+aiohttp==3.9.1
+
+# Utilities
+pydantic==2.4.2
+python-dateutil==2.8.2
+
+# Development
+pytest==7.4.3
+pytest-asyncio==0.21.1
